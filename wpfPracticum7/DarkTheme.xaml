@@ -1,0 +1,76 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:collect="clr-namespace:System.Collections;assembly=mscorlib"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    
+    <SolidColorBrush x:Key="backGrColor" Color="Black" />
+    <SolidColorBrush x:Key="foreGrColor" Color="White" />
+    <SolidColorBrush x:Key="BorderBrColor" Color="Gray" />
+    
+    <Style TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource backGrColor}"/>
+    </Style>
+    <Style TargetType="ComboBox">
+        <Setter Property="Background" Value="{StaticResource backGrColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource foreGrColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrColor}"/>
+    </Style>
+    <Style TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource backGrColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource foreGrColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrColor}"/>
+        <Setter Property="TextAlignment" Value="Justify"/>
+    </Style>
+    <Style TargetType="RadioButton">
+        <Setter Property="Background" Value="{StaticResource backGrColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource foreGrColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrColor}"/>
+    </Style>
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource backGrColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource foreGrColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrColor}"/>
+    </Style>
+    <Style TargetType="Menu">
+        <Setter Property="Background" Value="{StaticResource backGrColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource foreGrColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrColor}"/>
+    </Style>
+    <Style TargetType="MenuItem">
+        <Setter Property="Background" Value="{StaticResource backGrColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource foreGrColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrColor}"/>
+    </Style>
+    <Style TargetType="ComboBoxItem">
+        <Setter Property="Background" Value="{StaticResource backGrColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource foreGrColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrColor}"/>
+    </Style>
+    <Style TargetType="ToolBarTray">
+        <Setter Property="Background" Value="{StaticResource backGrColor}"/>
+    </Style>
+    <Style TargetType="ToolBar">
+        <Setter Property="Background" Value="{StaticResource backGrColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource foreGrColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrColor}"/>
+    </Style>
+    <Style TargetType="Label">
+        <Setter Property="Background" Value="{StaticResource backGrColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource foreGrColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrColor}"/>
+    </Style>
+
+
+    <collect:ArrayList x:Key="fonts">
+        <sys:String>Arial</sys:String>
+        <sys:String>Times New Roman</sys:String>
+        <sys:String>Verdana</sys:String>
+        <sys:String>Calibri</sys:String>
+    </collect:ArrayList>
+    <collect:ArrayList x:Key="sizes">
+        <sys:String>16</sys:String>
+        <sys:String>18</sys:String>
+        <sys:String>20</sys:String>
+        <sys:String>24</sys:String>
+    </collect:ArrayList>
+</ResourceDictionary>
