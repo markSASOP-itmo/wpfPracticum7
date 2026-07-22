@@ -24,22 +24,20 @@
                 <MenuItem Header="Save"  Command="Save"/>
                 <MenuItem Header="Exit"  Command="local:myComands.Exit"/>
             </MenuItem>
+            <MenuItem Header="View">
+                <RadioButton Content="Light theme" IsChecked="True" Checked="changeToLightTheme"/>
+                <RadioButton Content="Dark theme" Checked="RadioButton_Checked_3" />
+            </MenuItem>
         </Menu>
         <ToolBarTray Grid.Row="1">
             <ToolBar>
                 <Separator/>
-                <ComboBox x:Name ="fontFamilies"  IsEditable="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" SelectedIndex="0" Height="30" Width="150" FontSize="16" SelectionChanged="fontFamilies_SelectionChanged">
-                    <Label Content="Arial" FontSize="13" FontFamily="Arial"/>
-                    <Label Content="Times New Roman" FontSize="14" FontFamily="Times New Roman"/>
-                    <Label Content="Verdana" FontSize="13" FontFamily="Verdana"/>
-                    <Label Content="Calibri" FontSize="14" FontFamily="Calibri"/>
+                <ComboBox x:Name ="fontFamilies"  IsEditable="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" SelectedIndex="0" Height="30" Width="150" FontSize="16"  ItemsSource="{StaticResource fonts}">
+                   
                 </ComboBox>
                 <Separator/>
-                <ComboBox Name ="fontSizes"  IsEditable="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="05,0,0,0" SelectedIndex="0" Height="30" SelectionChanged="fontSizes_SelectionChanged">
-                    <TextBlock Text="16" />
-                    <TextBlock Text="18"/>
-                    <TextBlock Text="20"/>
-                    <TextBlock Text="24"/>
+                <ComboBox Name ="fontSizes"  IsEditable="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="05,0,0,0" SelectedIndex="0" Height="30"  ItemsSource="{StaticResource sizes}">
+                   
                 </ComboBox>
             </ToolBar>
             <ToolBar Margin="20,0,0,0">
@@ -73,6 +71,6 @@
             </ToolBar>
         </ToolBarTray>
         <GridSplitter Grid.Row="2" Height="5"/>
-        <TextBox x:Name="textBox0" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="19" FontWeight="Normal" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="textBox0" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="{Binding ElementName=fontSizes, Path=SelectedItem}" FontFamily="{Binding ElementName=fontFamilies, Path=SelectedItem}" FontWeight="Normal" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
     </Grid>
 </Window>

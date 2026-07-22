@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Diagnostics;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -26,20 +27,20 @@ namespace wpfPracticum7
         {
             InitializeComponent();
         }
-        private void fontFamilies_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            FontFamily fontFamily = ((sender as ComboBox).SelectedItem as Label).FontFamily;
-            if (textBox0 != null)
-                textBox0.FontFamily = fontFamily;
-        }
+        //private void fontFamilies_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    string fontFamily = ((sender as ComboBox).SelectedItem as string);
+        //    if (textBox0 != null)
+        //        textBox0.FontFamily = new FontFamily(fontFamily);
+        //}
 
-        private void fontSizes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (textBox0 != null)
-            {
-                textBox0.FontSize = Convert.ToDouble(((sender as ComboBox).SelectedItem as TextBlock).Text);
-            }
-        }
+        //private void fontSizes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    if (textBox0 != null)
+        //    {
+        //        textBox0.FontSize = Convert.ToDouble((sender as ComboBox).SelectedItem as string);
+        //    }
+        //}
 
         private void Button_Click(object sender, RoutedEventArgs e) //жирный шрифт
         {
@@ -153,6 +154,22 @@ namespace wpfPracticum7
             {
                 File.WriteAllText(saveFileDialog.FileName, textBox0.Text);
             }
+        }
+
+        private void changeToLightTheme(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Uri theme = new Uri("LightTheme.xaml", UriKind.Relative);
+            ResourceDictionary themeDictionary = Application.LoadComponent(theme) as ResourceDictionary;
+            Application.Current.Resources.MergedDictionaries.Add(themeDictionary);
+        }
+
+        private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Uri theme = new Uri("DarkTheme.xaml", UriKind.Relative);
+            ResourceDictionary themeDictionary = Application.LoadComponent(theme) as ResourceDictionary;
+            Application.Current.Resources.MergedDictionaries.Add(themeDictionary);
         }
     }
 }
